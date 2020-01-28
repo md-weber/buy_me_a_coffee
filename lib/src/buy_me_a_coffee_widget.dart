@@ -4,15 +4,40 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+/// Url to the buy me a coffee website
 const String buyMeACoffeeUrl = "https://www.buymeacoffee.com/";
 
+/// The [BuyMeACoffeeWidget] is the widget. It has a tap event and will trigger as soon someone taps it.
+/// It opens up a browser window in the default browser of the device and
+/// navigates to the specified UserID on Buy me a coffee.
 class BuyMeACoffeeWidget extends StatelessWidget {
+  /// The id for the user where it should link to.
   final String sponsorID;
+
+  /// Custom text for the widget
   final String customText;
+
+  /// Overwrites the textStyle of the widget
   final TextStyle textStyle;
+
+  /// Color of the background if none is provided the [theme] background
+  /// will be used or the fallback
   final Color backgroundColor;
+
+  /// The theme of the widget, it changes the appearence of the Button
+  ///
+  /// There are multiple themes provided
+  /// - [OrangeTheme]
+  /// - [YellowTheme]
+  /// - [BlackTheme]
+  /// - [BlueTheme]
+  /// - [PurpleTheme]
+  /// - [WhiteTheme]
+  ///
+  /// Find more [BuyMeACoffeeThemeData]
   final BuyMeACoffeeThemeData theme;
 
+  /// Constructor of the BuyMeACoffee Widget
   const BuyMeACoffeeWidget({
     Key key,
     @required this.sponsorID,
