@@ -1,6 +1,6 @@
 name: buy_me_a_coffee_widget
 description: Did you ever needed a widget for buy me a coffee, well here it is.
-version: 0.0.2
+version: 1.0.0
 homepage: https://github.com/md-weber/buy_me_a_coffee
 
 environment:
