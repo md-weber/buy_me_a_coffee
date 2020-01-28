@@ -2,7 +2,7 @@
 
 Did you ever needed a widget for buy me a coffee, well here it is.
 
-![Buy me a coffee widget][./assets/readme/BuyMeACoffee.gif]
+![Buy me a coffee widget][https://github.com/md-weber/buy_me_a_coffee/blob/master/assets/readme/BuyMeACoffee.gif]
 
 ## Getting Started
 
