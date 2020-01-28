@@ -6,6 +6,15 @@ Did you ever needed a widget for buy me a coffee, well here it is.
 
 ![Buy me a coffee widget](https://github.com/md-weber/buy_me_a_coffee/blob/master/assets/readme/BuyMeACoffee.gif)
 
+# Important note
+Be very careful with using this widget. According to the Google Play Guidelines you are not 
+allowed to get payments from external ressources. So a donation button could lead to a 
+ban of your app!
+
+This app should only be used in Web or in Stores that allow a donation.
+
+For more information please read this [Reddit Post](https://www.reddit.com/r/androiddev/comments/7cfisr/does_google_unpublish_apps_for_having_a_donate/).
+
 ## Getting Started
 
 You have to import

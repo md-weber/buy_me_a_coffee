@@ -1,6 +1,7 @@
 # example
 
-A new Flutter project.
+This is a example how you can use BuyMeACoffeeWidget.
+
 
 ## Getting Started
 
