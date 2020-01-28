@@ -1,4 +1,4 @@
-# buy_me_a_coffee
+# Buy me a coffee widget
 
 Did you ever needed a widget for buy me a coffee, well here it is.
 
