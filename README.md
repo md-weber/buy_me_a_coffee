@@ -13,7 +13,9 @@ ban of your app!
 
 This app should only be used in Web or in Stores that allow a donation.
 
-For more information please read this [Reddit Post](https://www.reddit.com/r/androiddev/comments/7cfisr/does_google_unpublish_apps_for_having_a_donate/).
+For more information please read this 
+* [Reddit Post](https://www.reddit.com/r/androiddev/comments/7cfisr/does_google_unpublish_apps_for_having_a_donate/).
+* [Google Play Store](https://play.google.com/about/monetization-ads/)
 
 ## Getting Started
 
