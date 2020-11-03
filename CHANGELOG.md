@@ -9,3 +9,7 @@
 ## [1.0.0] - 28.01.2020
 
 * Added an important note to the readme file.
+
+## [1.0.1] - 03.11.2020
+
+* Version update of google_fonts && flutter_svg
