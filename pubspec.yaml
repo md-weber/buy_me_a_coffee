@@ -25,7 +25,7 @@ flutter:
   fonts:
     - family: Cookie
       fonts:
-        - asset: /fonts/Cookie-Regular.ttf
+        - asset: assets/fonts/Cookie-Regular.ttf
 
 # To add assets to your package, add an assets section, like this:
 # assets:
