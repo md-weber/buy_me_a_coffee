@@ -1,7 +1,6 @@
 import 'package:buy_me_a_coffee_widget/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Url to the buy me a coffee website
@@ -18,11 +17,11 @@ class BuyMeACoffeeWidget extends StatelessWidget {
   final String customText;
 
   /// Overwrites the textStyle of the widget
-  final TextStyle textStyle;
+  final TextStyle? textStyle;
 
   /// Color of the background if none is provided the [theme] background
   /// will be used or the fallback
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   /// The theme of the widget, it changes the appearence of the Button
   ///
@@ -35,12 +34,12 @@ class BuyMeACoffeeWidget extends StatelessWidget {
   /// - [WhiteTheme]
   ///
   /// Find more [BuyMeACoffeeThemeData]
-  final BuyMeACoffeeThemeData theme;
+  final BuyMeACoffeeThemeData? theme;
 
   /// Constructor of the BuyMeACoffee Widget
   const BuyMeACoffeeWidget({
-    Key key,
-    @required this.sponsorID,
+    Key? key,
+    required this.sponsorID,
     this.customText = "Buy me a coffee",
     this.textStyle,
     this.backgroundColor,
@@ -57,7 +56,7 @@ class BuyMeACoffeeWidget extends StatelessWidget {
     } else if (backgroundColor != null) {
       backgroundColor = backgroundColor;
     } else {
-      backgroundColor = theme.backgroundColor;
+      backgroundColor = theme!.backgroundColor;
     }
 
     return GestureDetector(
@@ -81,7 +80,7 @@ class BuyMeACoffeeWidget extends StatelessWidget {
               BoxShadow(
                 color: Color.fromRGBO(190, 190, 190, 0.5),
                 blurRadius: 2.0,
-                offset: Offset.lerp(Offset(0, 0), Offset(1, 1), 1),
+                offset: Offset.lerp(Offset(0, 0), Offset(1, 1), 1)!,
               )
             ],
             borderRadius: BorderRadius.all(
@@ -100,8 +99,11 @@ class BuyMeACoffeeWidget extends StatelessWidget {
                 child: Text(
                   customText,
                   style: textStyle == null
-                      ? GoogleFonts.cookie(
-                          color: theme == null ? Colors.white : theme.textColor,
+                      // TODO: Add Google Fonts as soon as null safety migration has been done
+                      ? TextStyle(
+                          fontFamily: "Cookie",
+                          color:
+                              theme == null ? Colors.white : theme!.textColor,
                           fontSize: 28.0,
                           letterSpacing: 0.6,
                         )

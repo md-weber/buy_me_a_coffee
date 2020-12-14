@@ -1,17 +1,16 @@
 name: buy_me_a_coffee_widget
 description: Did you ever needed a widget for buy me a coffee, well here it is.
-version: 1.0.1
+version: 2.0.0-nullsafety.0
 homepage: https://github.com/md-weber/buy_me_a_coffee
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0-29.10.beta <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^0.19.1
-  url_launcher: ^5.4.1
-  google_fonts: ^1.1.1
+  flutter_svg: ^0.20.0-nullsafety.2
+  url_launcher: ^6.0.0-nullsafety.1
 
 dev_dependencies:
   flutter_test:
@@ -23,6 +22,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  fonts:
+    - family: Cookie
+      fonts:
+        - asset: /fonts/Cookie-Regular.ttf
 
 # To add assets to your package, add an assets section, like this:
 # assets:
