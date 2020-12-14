@@ -37,9 +37,9 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             Center(
               child: Container(
-                width: 217.0,
+                padding: EdgeInsets.symmetric(horizontal: 40),
                 child: BuyMeACoffeeWidget(
-                  sponsorID: "sBGXj7Pl4",
+                  sponsorID: "flutterexp",
                   theme: theme,
                 ),
               ),
@@ -134,10 +134,11 @@ class _MyAppState extends State<MyApp> {
 }
 
 class ThemeSelector extends StatelessWidget {
-  final Function onTap;
+  final VoidCallback onTap;
   final Color color;
 
-  const ThemeSelector({Key key, this.onTap, this.color}) : super(key: key);
+  const ThemeSelector({Key? key, required this.onTap, required this.color})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

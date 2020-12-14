@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 /// This is the interface for all Themes for BuyMeACoffee
-class BuyMeACoffeeThemeData {
+abstract class BuyMeACoffeeThemeData {
   /// Background Color of the Button
-  Color backgroundColor;
+  late Color backgroundColor;
 
   /// Text Color inside the button
-  Color textColor;
+  late Color textColor;
 }
 
 /// [OrangeTheme] is a implementation of [BuyMeACoffeeThemeData]
