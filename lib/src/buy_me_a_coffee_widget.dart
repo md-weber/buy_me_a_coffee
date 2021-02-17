@@ -10,6 +10,16 @@ const String buyMeACoffeeUrl = "https://www.buymeacoffee.com/";
 /// It opens up a browser window in the default browser of the device and
 /// navigates to the specified UserID on Buy me a coffee.
 class BuyMeACoffeeWidget extends StatelessWidget {
+  /// Constructor of the BuyMeACoffee Widget
+  const BuyMeACoffeeWidget({
+    Key? key,
+    required this.sponsorID,
+    this.customText = "Buy me a coffee",
+    this.textStyle,
+    this.backgroundColor,
+    this.theme,
+  }) : super(key: key);
+
   /// The id for the user where it should link to.
   final String sponsorID;
 
@@ -36,20 +46,10 @@ class BuyMeACoffeeWidget extends StatelessWidget {
   /// Find more [BuyMeACoffeeThemeData]
   final BuyMeACoffeeThemeData? theme;
 
-  /// Constructor of the BuyMeACoffee Widget
-  const BuyMeACoffeeWidget({
-    Key? key,
-    required this.sponsorID,
-    this.customText = "Buy me a coffee",
-    this.textStyle,
-    this.backgroundColor,
-    this.theme,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    var backgroundColor;
-    var textStyle;
+    Color? backgroundColor;
+    TextStyle? textStyle;
 
     if (theme == null && backgroundColor == null) {
       backgroundColor = Color(0xFFFF813F);
@@ -71,7 +71,7 @@ class BuyMeACoffeeWidget extends StatelessWidget {
       child: ConstrainedBox(
         constraints: BoxConstraints(minWidth: 217.0),
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 7.0, horizontal: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 10.0),
           height: 51.0,
           decoration: BoxDecoration(
             color: backgroundColor,
@@ -83,7 +83,7 @@ class BuyMeACoffeeWidget extends StatelessWidget {
                 offset: Offset.lerp(Offset(0, 0), Offset(1, 1), 1)!,
               )
             ],
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(5.0),
             ),
           ),

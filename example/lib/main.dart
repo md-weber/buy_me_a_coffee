@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Buy me a coffee Widget"),
+          title: const Text("Buy me a coffee Widget"),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -134,11 +134,11 @@ class _MyAppState extends State<MyApp> {
 }
 
 class ThemeSelector extends StatelessWidget {
-  final VoidCallback onTap;
-  final Color color;
-
   const ThemeSelector({Key? key, required this.onTap, required this.color})
       : super(key: key);
+
+  final VoidCallback onTap;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -146,12 +146,12 @@ class ThemeSelector extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: onTap,
-        child: new Container(
-            child: new CircleAvatar(backgroundColor: color),
+        child: Container(
+            child: CircleAvatar(backgroundColor: color),
             width: 64.0,
             height: 64.0,
             padding: const EdgeInsets.all(1.0),
-            decoration: new BoxDecoration(
+            decoration: BoxDecoration(
               color: Colors.black, // border color
               shape: BoxShape.circle,
             )),
