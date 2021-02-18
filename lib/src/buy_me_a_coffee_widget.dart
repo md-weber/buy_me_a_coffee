@@ -52,7 +52,7 @@ class BuyMeACoffeeWidget extends StatelessWidget {
     TextStyle? textStyle;
 
     if (theme == null && backgroundColor == null) {
-      backgroundColor = Color(0xFFFF813F);
+      backgroundColor = const Color(0xFFFF813F);
     } else if (backgroundColor != null) {
       backgroundColor = backgroundColor;
     } else {
@@ -61,26 +61,26 @@ class BuyMeACoffeeWidget extends StatelessWidget {
 
     return GestureDetector(
       onTap: () async {
-        var urlString = buyMeACoffeeUrl + sponsorID;
+        final urlString = buyMeACoffeeUrl + sponsorID;
         if (await canLaunch(urlString)) {
           await launch(urlString);
         } else {
-          throw "BuyMeACoffeWidget - Something went wrong!";
+          throw "BuyMeACoffeeWidget - Something went wrong!";
         }
       },
       child: ConstrainedBox(
-        constraints: BoxConstraints(minWidth: 217.0),
+        constraints: const BoxConstraints(minWidth: 217.0),
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 10.0),
           height: 51.0,
           decoration: BoxDecoration(
             color: backgroundColor,
-            border: Border.all(color: Colors.transparent, width: 1.0),
+            border: Border.all(color: Colors.transparent),
             boxShadow: [
               BoxShadow(
-                color: Color.fromRGBO(190, 190, 190, 0.5),
+                color: const Color.fromRGBO(190, 190, 190, 0.5),
                 blurRadius: 2.0,
-                offset: Offset.lerp(Offset(0, 0), Offset(1, 1), 1)!,
+                offset: Offset.lerp(const Offset(0, 0), const Offset(1, 1), 1)!,
               )
             ],
             borderRadius: const BorderRadius.all(
@@ -98,16 +98,13 @@ class BuyMeACoffeeWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 8.0),
                 child: Text(
                   customText,
-                  style: textStyle == null
-                      // TODO: Add Google Fonts as soon as null safety migration has been done
-                      ? TextStyle(
-                          fontFamily: "Cookie",
-                          color:
-                              theme == null ? Colors.white : theme!.textColor,
-                          fontSize: 28.0,
-                          letterSpacing: 0.6,
-                        )
-                      : textStyle,
+                  style: textStyle ??
+                      TextStyle(
+                        fontFamily: "Cookie",
+                        color: theme == null ? Colors.white : theme!.textColor,
+                        fontSize: 28.0,
+                        letterSpacing: 0.6,
+                      ),
                 ),
               )
             ],

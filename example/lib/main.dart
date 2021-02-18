@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+/// BuyMeACoffee Example App
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
@@ -133,11 +134,16 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+/// ThemeSelectorWidget - Creates a Button with the color
 class ThemeSelector extends StatelessWidget {
+  /// Constructor of the ThemeSelector
   const ThemeSelector({Key? key, required this.onTap, required this.color})
       : super(key: key);
 
+  /// Tap on the ThemeSelector
   final VoidCallback onTap;
+
+  /// Color of the different Themes
   final Color color;
 
   @override
