@@ -4,8 +4,9 @@ analyzer:
   errors:
     # treat missing required parameters as a warning (not a hint)
     missing_required_param: warning
+    avoid_field_initializers_in_const_classes: ignore
 
 linter:
   rules:
-    - package_api_docs
-    - public_member_api_docs
+    - package_api_docs: true
+    - public_member_api_docs: true
