@@ -1,10 +1,12 @@
 import 'package:buy_me_a_coffee_widget/buy_me_a_coffee_widget.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 /// BuyMeACoffee Example App
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   _MyAppState createState() => _MyAppState();
@@ -38,10 +40,20 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             Center(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: BuyMeACoffeeWidget(
-                  sponsorID: "flutterexp",
-                  theme: theme,
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    BuyMeACoffeeWidget(
+                      sponsorID: "flutterexp",
+                      theme: theme,
+                    ),
+                    const SizedBox(height: 8),
+                    BuyMeACoffeeWidget.iconOnly(
+                      sponsorID: "flutterexp",
+                      theme: theme,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -54,7 +66,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       ThemeSelector(
-                        color: Color(0xFFFF813F),
+                        color: const Color(0xFFFF813F),
                         onTap: () {
                           setState(() {
                             theme = OrangeTheme();
@@ -62,7 +74,7 @@ class _MyAppState extends State<MyApp> {
                         },
                       ),
                       ThemeSelector(
-                        color: Color(0xFFFFDD00),
+                        color: const Color(0xFFFFDD00),
                         onTap: () {
                           setState(() {
                             theme = YellowTheme();
@@ -70,7 +82,7 @@ class _MyAppState extends State<MyApp> {
                         },
                       ),
                       ThemeSelector(
-                        color: Color(0xFFbd5fff),
+                        color: const Color(0xFFbd5fff),
                         onTap: () {
                           setState(() {
                             theme = PurpleTheme();
@@ -99,7 +111,7 @@ class _MyAppState extends State<MyApp> {
                         },
                       ),
                       ThemeSelector(
-                        color: Color(0xFF79D6B5),
+                        color: const Color(0xFF79D6B5),
                         onTap: () {
                           setState(() {
                             theme = TealTheme();
@@ -107,7 +119,7 @@ class _MyAppState extends State<MyApp> {
                         },
                       ),
                       ThemeSelector(
-                        color: Color(0xFFFF5F5F),
+                        color: const Color(0xFFFF5F5F),
                         onTap: () {
                           setState(() {
                             theme = RedTheme();
@@ -115,7 +127,7 @@ class _MyAppState extends State<MyApp> {
                         },
                       ),
                       ThemeSelector(
-                        color: Color(0xFFF471FF),
+                        color: const Color(0xFFF471FF),
                         onTap: () {
                           setState(() {
                             theme = PinkTheme();
@@ -153,14 +165,15 @@ class ThemeSelector extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-            child: CircleAvatar(backgroundColor: color),
-            width: 64.0,
-            height: 64.0,
-            padding: const EdgeInsets.all(1.0),
-            decoration: BoxDecoration(
-              color: Colors.black, // border color
-              shape: BoxShape.circle,
-            )),
+          width: 64.0,
+          height: 64.0,
+          padding: const EdgeInsets.all(1.0),
+          decoration: const BoxDecoration(
+            color: Colors.black, // border color
+            shape: BoxShape.circle,
+          ),
+          child: CircleAvatar(backgroundColor: color),
+        ),
       ),
     );
   }
