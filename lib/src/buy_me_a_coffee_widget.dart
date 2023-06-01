@@ -19,6 +19,7 @@ class BuyMeACoffeeWidget extends StatelessWidget {
     this.textStyle,
     this.backgroundColor,
     this.theme,
+    this.padding,
   })  : _isIconOnly = false,
         super(key: key);
 
@@ -27,12 +28,15 @@ class BuyMeACoffeeWidget extends StatelessWidget {
     required this.sponsorID,
     this.backgroundColor,
     this.theme,
+    this.padding,
   })  : _isIconOnly = false,
         customText = null,
         textStyle = null,
         super(key: key);
 
   final bool _isIconOnly;
+
+  final EdgeInsets? padding;
 
   /// The id for the user where it should link to.
   final String sponsorID;
@@ -87,10 +91,11 @@ class BuyMeACoffeeWidget extends StatelessWidget {
           launchUrl(uri);
         },
         child: Container(
-          padding: EdgeInsets.symmetric(
-            vertical: 7.0,
-            horizontal: _isIconOnly ? 0 : 10.0,
-          ),
+          padding: padding ??
+              EdgeInsets.symmetric(
+                vertical: 7.0,
+                horizontal: _isIconOnly ? 0 : 10.0,
+              ),
           decoration: BoxDecoration(
             color: backgroundColor,
             border: Border.all(color: Colors.transparent),
